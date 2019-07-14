@@ -23,7 +23,7 @@ const baseConfig = {
         isProduction: true
       }
     },
-    postVue: [buble()]
+    postVue: [buble({ objectAssign: true })]
   }
 };
 

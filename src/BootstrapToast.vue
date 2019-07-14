@@ -2,6 +2,7 @@
   <BToast
     no-close-button
     :variant="variant"
+    :solid="solid"
     :no-auto-hide="noAutoHide"
     :auto-hide-delay="autoHideDelay"
     :visible="isVisible"
@@ -36,6 +37,10 @@ export default {
       default: 5000
     },
     noAutoHide: {
+      type: Boolean,
+      default: false
+    },
+    solid: {
       type: Boolean,
       default: false
     },

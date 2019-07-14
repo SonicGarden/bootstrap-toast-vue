@@ -1,5 +1,7 @@
 # bootstrap-toast-vue
 
+[![Image from Gyazo](https://i.gyazo.com/cb9c171434d5c2280448f6fb6fe46e54.gif)](https://gyazo.com/cb9c171434d5c2280448f6fb6fe46e54)
+
 ## Install
 
 ```

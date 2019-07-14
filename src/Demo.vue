@@ -5,6 +5,7 @@
       <button type="button" class="btn btn-primary" @click="showSuccess">success</button>
       <button type="button" class="btn btn-danger ml-1" @click="showError">error</button>
       <button type="button" class="btn btn-danger ml-1" @click="showErrors">errors</button>
+      <button type="button" class="btn btn-info ml-1" @click="showSolid">solid</button>
     </div>
   </div>
 </template>
@@ -30,6 +31,9 @@ export default {
     },
     showErrors() {
       showErrors(["error1!", "error2!"]);
+    },
+    showSolid() {
+      showSuccess("solid!", { solid: true, noAutoHide: true });
     }
   }
 };

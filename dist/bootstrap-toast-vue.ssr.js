@@ -19,6 +19,10 @@ var script = {
       type: Boolean,
       default: false
     },
+    solid: {
+      type: Boolean,
+      default: false
+    },
     component: {
       type: [Object, Function],
       default: null
@@ -175,19 +179,19 @@ var server = createInjectorSSR;/* script */
 var __vue_script__ = script;
 
 /* template */
-var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('BToast',{attrs:{"no-close-button":"","variant":_vm.variant,"no-auto-hide":_vm.noAutoHide,"auto-hide-delay":_vm.autoHideDelay,"visible":_vm.isVisible},on:{"click":_vm.hide}},[_vm._t("closeButton",[_c('BButton',{staticClass:"close-button text-black-50",attrs:{"size":"sm","variant":"link"},on:{"click":_vm.hide}},[_c('i',{staticClass:"fas fa-times"})])]),_vm._v(" "),(_vm.component)?_c(_vm.component,_vm._b({tag:"Component"},'Component',_vm.props,false)):[_vm._v(_vm._s(_vm.content))]],2)};
+var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('BToast',{attrs:{"no-close-button":"","variant":_vm.variant,"solid":_vm.solid,"no-auto-hide":_vm.noAutoHide,"auto-hide-delay":_vm.autoHideDelay,"visible":_vm.isVisible},on:{"click":_vm.hide}},[_vm._t("closeButton",[_c('BButton',{staticClass:"close-button text-black-50",attrs:{"size":"sm","variant":"link"},on:{"click":_vm.hide}},[_c('i',{staticClass:"fas fa-times"})])]),_vm._v(" "),(_vm.component)?_c(_vm.component,_vm._b({tag:"Component"},'Component',_vm.props,false)):[_vm._v(_vm._s(_vm.content))]],2)};
 var __vue_staticRenderFns__ = [];
 
   /* style */
   var __vue_inject_styles__ = function (inject) {
     if (!inject) { return }
-    inject("data-v-47f82585_0", { source: ".close-button[data-v-47f82585]{position:absolute;top:0;right:0}", map: undefined, media: undefined });
+    inject("data-v-4235bb6a_0", { source: ".close-button[data-v-4235bb6a]{position:absolute;top:0;right:0}", map: undefined, media: undefined });
 
   };
   /* scoped */
-  var __vue_scope_id__ = "data-v-47f82585";
+  var __vue_scope_id__ = "data-v-4235bb6a";
   /* module identifier */
-  var __vue_module_identifier__ = "data-v-47f82585";
+  var __vue_module_identifier__ = "data-v-4235bb6a";
   /* functional template */
   var __vue_is_functional_template__ = false;
 
@@ -253,28 +257,31 @@ var __vue_staticRenderFns__$1 = [];
   });
 };
 
-var showSuccess = function (content) {
-  open({
-    content: content,
+var showSuccess = function (content, propsData) {
+  if ( propsData === void 0 ) propsData = {};
+
+  open(Object.assign({}, {content: content,
     variant: "success",
-    autoHideDelay: 5000
-  });
+    autoHideDelay: 5000},
+    propsData));
 };
 
-var showError = function (content) {
-  open({
-    content: content,
+var showError = function (content, propsData) {
+  if ( propsData === void 0 ) propsData = {};
+
+  open(Object.assign({}, {content: content,
     variant: "danger",
-    autoHideDelay: 20000
-  });
+    autoHideDelay: 20000},
+    propsData));
 };
 
-var showErrors = function (messages) {
-  open({
-    component: BootstrapToastMessages,
+var showErrors = function (messages, propsData) {
+  if ( propsData === void 0 ) propsData = {};
+
+  open(Object.assign({}, {component: BootstrapToastMessages,
     props: { messages: messages },
     variant: "danger",
-    autoHideDelay: 20000
-  });
+    autoHideDelay: 20000},
+    propsData));
 };// Import vue component
 exports.default=component;exports.open=open;exports.showError=showError;exports.showErrors=showErrors;exports.showSuccess=showSuccess;
