@@ -27,5 +27,5 @@ showErrors(["Error1!", "Error2!"]);
 ### Compiles and hot-reloads for development
 
 ```
-vue serve src/Demo.vue
+yarn serve
 ```
