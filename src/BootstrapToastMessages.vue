@@ -4,15 +4,17 @@
   </ul>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue, { PropType } from 'vue'
+
+export default Vue.extend({
   props: {
     messages: {
-      type: Array,
-      required: true
-    }
-  }
-};
+      type: Array as PropType<string[]>,
+      required: true,
+    },
+  },
+})
 </script>
 
 <style scoped lang="css">

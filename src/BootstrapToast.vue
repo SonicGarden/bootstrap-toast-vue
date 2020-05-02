@@ -9,7 +9,12 @@
     @click="hide"
   >
     <slot name="closeButton">
-      <BButton class="close-button text-black-50" size="sm" variant="link" @click="hide">
+      <BButton
+        class="close-button text-black-50"
+        size="sm"
+        variant="link"
+        @click="hide"
+      >
         <i class="fas fa-times" />
       </BButton>
     </slot>
@@ -19,51 +24,52 @@
 </template>
 
 <script>
-import { BButton, BToast } from "bootstrap-vue";
+import Vue from 'vue'
+import { BButton, BToast } from 'bootstrap-vue'
 
-export default {
+export default Vue.extend({
   components: { BToast, BButton },
   props: {
     content: {
       type: String,
-      default: null
+      default: null,
     },
     variant: {
       type: String,
-      default: null
+      default: null,
     },
     autoHideDelay: {
       type: Number,
-      default: 5000
+      default: 5000,
     },
     noAutoHide: {
       type: Boolean,
-      default: false
+      default: false,
     },
     solid: {
       type: Boolean,
-      default: false
+      default: false,
     },
     component: {
       type: [Object, Function],
-      default: null
+      default: null,
     },
     props: {
       type: Object,
-      default: null
-    }
+      default: null,
+    },
   },
   data() {
     return {
-      isVisible: true
-    };
+      isVisible: true,
+    }
   },
   methods: {
     hide() {
-      this.isVisible = false;
-    }
-  }
-};
+      this.isVisible = false
+    },
+  },
+})
 </script>
 
 <style lang="css" scoped>
