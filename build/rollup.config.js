@@ -1,90 +1,166 @@
 // rollup.config.js
-import vue from "rollup-plugin-vue";
-import buble from "rollup-plugin-buble";
-import commonjs from "rollup-plugin-commonjs";
-import replace from "rollup-plugin-replace";
-import { terser } from "rollup-plugin-terser";
-import minimist from "minimist";
+import fs from 'fs'
+import path from 'path'
+import vue from 'rollup-plugin-vue'
+import alias from '@rollup/plugin-alias'
+import commonjs from '@rollup/plugin-commonjs'
+import replace from '@rollup/plugin-replace'
+import babel from 'rollup-plugin-babel'
+import { terser } from 'rollup-plugin-terser'
+import typescript from 'rollup-plugin-typescript2'
+import minimist from 'minimist'
 
-const argv = minimist(process.argv.slice(2));
+// Get browserslist config and remove ie from es build targets
+const esbrowserslist = fs
+  .readFileSync('./.browserslistrc')
+  .toString()
+  .split('\n')
+  .filter((entry) => entry && entry.substring(0, 2) !== 'ie')
+
+const argv = minimist(process.argv.slice(2))
+
+const projectRoot = path.resolve(__dirname, '..')
 
 const baseConfig = {
-  input: "src/entry.js",
+  input: 'src/index.ts',
   plugins: {
     preVue: [
-      replace({
-        "process.env.NODE_ENV": JSON.stringify("production")
+      alias({
+        resolve: ['.js', '.jsx', '.ts', '.tsx', '.vue'],
+        entries: {
+          '@': path.resolve(projectRoot, 'src'),
+        },
       }),
-      commonjs()
+      typescript({
+        typescript: require('typescript'),
+        cacheRoot: './node_modules/.cache/rpt2_cache',
+        clean: true,
+      }),
     ],
+    replace: {
+      'process.env.NODE_ENV': JSON.stringify('production'),
+      'process.env.ES_BUILD': JSON.stringify('false'),
+    },
     vue: {
       css: true,
       template: {
-        isProduction: true
-      }
+        isProduction: true,
+      },
     },
-    postVue: [buble({ objectAssign: true })]
-  }
-};
+    babel: {
+      exclude: 'node_modules/**',
+      extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue'],
+    },
+  },
+}
 
-// UMD/IIFE shared settings: externals and output.globals
+// ESM/UMD/IIFE shared settings: externals
+// Refer to https://rollupjs.org/guide/en/#warning-treating-module-as-external-dependency
+const external = [
+  // list external dependencies, exactly the way it is written in the import statement.
+  // eg. 'jquery'
+  'vue',
+]
+
+// UMD/IIFE shared settings: output.globals
 // Refer to https://rollupjs.org/guide/en#output-globals for details
-const external = ["bootstrap-vue", "vue"];
 const globals = {
   // Provide global variable names to replace your external imports
   // eg. jquery: '$'
-};
-
-// Customize configs for individual targets
-const buildFormats = [];
-if (!argv.format || argv.format === "es") {
-  const esConfig = {
-    ...baseConfig,
-    output: {
-      file: "dist/bootstrap-toast-vue.esm.js",
-      format: "esm",
-      exports: "named"
-    },
-    plugins: [
-      ...baseConfig.plugins.preVue,
-      vue(baseConfig.plugins.vue),
-      ...baseConfig.plugins.postVue,
-      terser({
-        output: {
-          ecma: 6
-        }
-      })
-    ]
-  };
-  buildFormats.push(esConfig);
+  vue: 'Vue',
 }
 
-if (!argv.format || argv.format === "cjs") {
+// Customize configs for individual targets
+const buildFormats = []
+if (!argv.format || argv.format === 'es') {
+  const esConfig = {
+    ...baseConfig,
+    external,
+    output: {
+      file: 'dist/bootstrap-toast-vue.esm.js',
+      format: 'esm',
+      exports: 'named',
+    },
+    plugins: [
+      replace({
+        ...baseConfig.plugins.replace,
+        'process.env.ES_BUILD': JSON.stringify('true'),
+      }),
+      ...baseConfig.plugins.preVue,
+      vue(baseConfig.plugins.vue),
+      babel({
+        ...baseConfig.plugins.babel,
+        presets: [
+          [
+            '@babel/preset-env',
+            {
+              targets: esbrowserslist,
+            },
+          ],
+        ],
+      }),
+      commonjs(),
+    ],
+  }
+  buildFormats.push(esConfig)
+}
+
+if (!argv.format || argv.format === 'cjs') {
   const umdConfig = {
     ...baseConfig,
     external,
     output: {
       compact: true,
-      file: "dist/bootstrap-toast-vue.ssr.js",
-      format: "cjs",
-      name: "BootstrapToastVue",
-      exports: "named",
-      globals
+      file: 'dist/bootstrap-toast-vue.ssr.js',
+      format: 'cjs',
+      name: 'BootstrapToastVue',
+      exports: 'named',
+      globals,
     },
     plugins: [
+      replace(baseConfig.plugins.replace),
       ...baseConfig.plugins.preVue,
       vue({
         ...baseConfig.plugins.vue,
         template: {
           ...baseConfig.plugins.vue.template,
-          optimizeSSR: true
-        }
+          optimizeSSR: true,
+        },
       }),
-      ...baseConfig.plugins.postVue
-    ]
-  };
-  buildFormats.push(umdConfig);
+      babel(baseConfig.plugins.babel),
+      commonjs(),
+    ],
+  }
+  buildFormats.push(umdConfig)
+}
+
+if (!argv.format || argv.format === 'iife') {
+  const unpkgConfig = {
+    ...baseConfig,
+    external,
+    output: {
+      compact: true,
+      file: 'dist/bootstrap-toast-vue.min.js',
+      format: 'iife',
+      name: 'BootstrapToastVue',
+      exports: 'named',
+      globals,
+    },
+    plugins: [
+      replace(baseConfig.plugins.replace),
+      ...baseConfig.plugins.preVue,
+      vue(baseConfig.plugins.vue),
+      babel(baseConfig.plugins.babel),
+      commonjs(),
+      terser({
+        output: {
+          ecma: 5,
+        },
+      }),
+    ],
+  }
+  buildFormats.push(unpkgConfig)
 }
 
 // Export config
-export default buildFormats;
+export default buildFormats

@@ -2,7 +2,9 @@ import Vue from "vue";
 import BootstrapToast from "./BootstrapToast.vue";
 import BootstrapToastMessages from "./BootstrapToastMessages.vue";
 
-const open = propsData => {
+type Props = Record<string, any>
+
+const open = (propsData: Props) => {
   const ToastComponent = Vue.extend(BootstrapToast);
   return new ToastComponent({
     el: document.createElement("div"),
@@ -10,7 +12,7 @@ const open = propsData => {
   });
 };
 
-const showSuccess = (content, propsData = {}) => {
+const showSuccess = (content: string, propsData: Props = {}) => {
   open({
     content,
     variant: "success",
@@ -19,7 +21,7 @@ const showSuccess = (content, propsData = {}) => {
   });
 };
 
-const showError = (content, propsData = {}) => {
+const showError = (content: string, propsData: Props = {}) => {
   open({
     content,
     variant: "danger",
@@ -28,7 +30,7 @@ const showError = (content, propsData = {}) => {
   });
 };
 
-const showErrors = (messages, propsData = {}) => {
+const showErrors = (messages: string[], propsData: Props = {}) => {
   open({
     component: BootstrapToastMessages,
     props: { messages },

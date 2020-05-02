@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import BootstrapToast, { showSuccess, showError, showErrors } from "./entry";
+import BootstrapToast, { showSuccess, showError, showErrors } from "./index";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
