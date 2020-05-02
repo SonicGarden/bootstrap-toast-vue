@@ -23,7 +23,7 @@
   </BToast>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue'
 import { BButton, BToast } from 'bootstrap-vue'
 
