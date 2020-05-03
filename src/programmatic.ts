@@ -1,12 +1,10 @@
-import Vue from "vue";
 import BootstrapToast from "./BootstrapToast.vue";
 import BootstrapToastMessages from "./BootstrapToastMessages.vue";
 
 type Props = Record<string, any>
 
 const open = (propsData: Props) => {
-  const ToastComponent = Vue.extend(BootstrapToast);
-  return new ToastComponent({
+  new BootstrapToast({
     el: document.createElement("div"),
     propsData
   });

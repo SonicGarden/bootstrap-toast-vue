@@ -28,6 +28,7 @@ import Vue from 'vue'
 import { BButton, BToast } from 'bootstrap-vue'
 
 export default Vue.extend({
+  name: 'BootstrapToast',
   components: { BToast, BButton },
   props: {
     content: {

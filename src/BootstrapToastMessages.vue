@@ -8,6 +8,7 @@
 import Vue, { PropType } from 'vue'
 
 export default Vue.extend({
+  name: 'BootstrapToastMessages',
   props: {
     messages: {
       type: Array as PropType<string[]>,
