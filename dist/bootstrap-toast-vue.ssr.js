@@ -1,4 +1,5 @@
 'use strict';Object.defineProperty(exports,'__esModule',{value:true});function _interopDefault(e){return(e&&(typeof e==='object')&&'default'in e)?e['default']:e}var Vue=_interopDefault(require('vue')),bootstrapVue=require('bootstrap-vue');var script = Vue.extend({
+  name: 'BootstrapToast',
   components: {
     BToast: bootstrapVue.BToast,
     BButton: bootstrapVue.BButton
@@ -200,8 +201,8 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-3ca4050b_0", {
-    source: ".close-button[data-v-3ca4050b]{position:absolute;top:0;right:0}",
+  inject("data-v-493d5cf5_0", {
+    source: ".close-button[data-v-493d5cf5]{position:absolute;top:0;right:0}",
     map: undefined,
     media: undefined
   });
@@ -209,10 +210,10 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__ = "data-v-3ca4050b";
+var __vue_scope_id__ = "data-v-493d5cf5";
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-3ca4050b";
+var __vue_module_identifier__ = "data-v-493d5cf5";
 /* functional template */
 
 var __vue_is_functional_template__ = false;
@@ -269,6 +270,7 @@ function _objectSpread2(target) {
 
   return target;
 }var script$1 = Vue.extend({
+  name: 'BootstrapToastMessages',
   props: {
     messages: {
       type: Array,
@@ -298,8 +300,8 @@ var __vue_staticRenderFns__$1 = [];
 
 var __vue_inject_styles__$1 = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-9608471e_0", {
-    source: ".messages[data-v-9608471e]{list-style:disc;padding-left:20px;margin-bottom:0}",
+  inject("data-v-a6347d72_0", {
+    source: ".messages[data-v-a6347d72]{list-style:disc;padding-left:20px;margin-bottom:0}",
     map: undefined,
     media: undefined
   });
@@ -307,10 +309,10 @@ var __vue_inject_styles__$1 = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$1 = "data-v-9608471e";
+var __vue_scope_id__$1 = "data-v-a6347d72";
 /* module identifier */
 
-var __vue_module_identifier__$1 = "data-v-9608471e";
+var __vue_module_identifier__$1 = "data-v-a6347d72";
 /* functional template */
 
 var __vue_is_functional_template__$1 = false;
@@ -320,8 +322,7 @@ var __vue_component__$1 = normalizeComponent({
   render: __vue_render__$1,
   staticRenderFns: __vue_staticRenderFns__$1
 }, __vue_inject_styles__$1, __vue_script__$1, __vue_scope_id__$1, __vue_is_functional_template__$1, __vue_module_identifier__$1, false, undefined, createInjectorSSR, undefined);var open = function open(propsData) {
-  var ToastComponent = Vue.extend(__vue_component__);
-  return new ToastComponent({
+  new __vue_component__({
     el: document.createElement("div"),
     propsData: propsData
   });
