@@ -821,9 +821,9 @@
     to-fast-properties "^2.0.0"
 
 "@fortawesome/fontawesome-free@^5.13.0":
-  version "5.13.0"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.13.0.tgz#fcb113d1aca4b471b709e8c9c168674fbd6e06d9"
-  integrity sha512-xKOeQEl5O47GPZYIMToj6uuA2syyFlq9EMSl2ui0uytjY9xbe8XS0pexNWmxrdcCyNGyDmLyYw5FtKsalBUeOg==
+  version "5.13.1"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.13.1.tgz#c53b4066edae16cd1fd669f687baf031b45fb9d6"
+  integrity sha512-D819f34FLHeBN/4xvw0HR0u7U2G7RqjPSggXqf7LktsxWQ48VAfGwvMrhcVuaZV2fF069c/619RdgCCms0DHhw==
 
 "@hapi/address@2.x.x":
   version "2.1.4"
@@ -888,10 +888,10 @@
     consola "^2.10.1"
     node-fetch "^2.6.0"
 
-"@rollup/plugin-alias@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@rollup/plugin-alias/-/plugin-alias-2.2.0.tgz#3ac52ece8b39583249884adb90fb316484389fe5"
-  integrity sha512-//6zmlHGbmousaatu4pBlC61gqZykLbH0c2GESBO4JgK5xFZgb/ih0zlg/5/BmTAczX5R/xsHRnsYsu4KyHV5w==
+"@rollup/plugin-alias@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-alias/-/plugin-alias-3.1.1.tgz#bb96cf37fefeb0a953a6566c284855c7d1cd290c"
+  integrity sha512-hNcQY4bpBUIvxekd26DBPgF7BT4mKVNDF5tBG4Zi+3IgwLxGYRY0itHs9D0oLVwXM5pvJDWJlBQro+au8WaUWw==
   dependencies:
     slash "^3.0.0"
 
