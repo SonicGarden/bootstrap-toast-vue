@@ -1,5 +1,5 @@
 <template>
-  <ul class="messages">
+  <ul class="bootstrap-toast-vue-messages">
     <li v-for="(message, k) in messages" :key="k" v-text="message" />
   </ul>
 </template>
@@ -19,7 +19,7 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="css">
-.messages {
+.bootstrap-toast-vue-messages {
   list-style: disc;
   padding-left: 20px;
   margin-bottom: 0;

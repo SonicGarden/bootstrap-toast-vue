@@ -289,7 +289,7 @@ var __vue_render__$1 = function __vue_render__() {
   var _c = _vm._self._c || _h;
 
   return _c('ul', {
-    staticClass: "messages"
+    staticClass: "bootstrap-toast-vue-messages"
   }, [_vm._ssrNode(_vm._ssrList(_vm.messages, function (message, k) {
     return "<li>" + _vm._ssrEscape(_vm._s(message)) + "</li>";
   }))]);
@@ -300,8 +300,8 @@ var __vue_staticRenderFns__$1 = [];
 
 var __vue_inject_styles__$1 = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-a6347d72_0", {
-    source: ".messages[data-v-a6347d72]{list-style:disc;padding-left:20px;margin-bottom:0}",
+  inject("data-v-332efb47_0", {
+    source: ".bootstrap-toast-vue-messages[data-v-332efb47]{list-style:disc;padding-left:20px;margin-bottom:0}",
     map: undefined,
     media: undefined
   });
@@ -309,10 +309,10 @@ var __vue_inject_styles__$1 = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$1 = "data-v-a6347d72";
+var __vue_scope_id__$1 = "data-v-332efb47";
 /* module identifier */
 
-var __vue_module_identifier__$1 = "data-v-a6347d72";
+var __vue_module_identifier__$1 = "data-v-332efb47";
 /* functional template */
 
 var __vue_is_functional_template__$1 = false;

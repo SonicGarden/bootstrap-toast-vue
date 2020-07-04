@@ -271,7 +271,7 @@ var __vue_render__$1 = function () {
   var _c = _vm._self._c || _h;
 
   return _c('ul', {
-    staticClass: "messages"
+    staticClass: "bootstrap-toast-vue-messages"
   }, _vm._l(_vm.messages, function (message, k) {
     return _c('li', {
       key: k,
@@ -287,8 +287,8 @@ var __vue_staticRenderFns__$1 = [];
 
 const __vue_inject_styles__$1 = function (inject) {
   if (!inject) return;
-  inject("data-v-a6347d72_0", {
-    source: ".messages[data-v-a6347d72]{list-style:disc;padding-left:20px;margin-bottom:0}",
+  inject("data-v-332efb47_0", {
+    source: ".bootstrap-toast-vue-messages[data-v-332efb47]{list-style:disc;padding-left:20px;margin-bottom:0}",
     map: undefined,
     media: undefined
   });
@@ -296,7 +296,7 @@ const __vue_inject_styles__$1 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$1 = "data-v-a6347d72";
+const __vue_scope_id__$1 = "data-v-332efb47";
 /* module identifier */
 
 const __vue_module_identifier__$1 = undefined;
