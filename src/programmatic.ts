@@ -1,7 +1,15 @@
 import BootstrapToast from "./BootstrapToast.vue";
 import BootstrapToastMessages from "./BootstrapToastMessages.vue";
 
-type Props = Record<string, any>
+type Props = {
+  content?: string
+  variant?: string
+  autoHideDelay?: number
+  noAutoHide?: boolean
+  solid?: boolean
+  component?: any
+  props?: any
+}
 
 const open = (propsData: Props) => {
   new BootstrapToast({

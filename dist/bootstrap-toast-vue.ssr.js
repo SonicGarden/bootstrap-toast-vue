@@ -1,4 +1,4 @@
-'use strict';Object.defineProperty(exports,'__esModule',{value:true});function _interopDefault(e){return(e&&(typeof e==='object')&&'default'in e)?e['default']:e}var Vue=_interopDefault(require('vue')),bootstrapVue=require('bootstrap-vue');var script = Vue.extend({
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});var Vue=require('vue'),bootstrapVue=require('bootstrap-vue');function _interopDefaultLegacy(e){return e&&typeof e==='object'&&'default'in e?e:{'default':e}}var Vue__default=/*#__PURE__*/_interopDefaultLegacy(Vue);var script = Vue__default['default'].extend({
   name: 'BootstrapToast',
   components: {
     BToast: bootstrapVue.BToast,
@@ -219,7 +219,7 @@ var __vue_module_identifier__ = "data-v-493d5cf5";
 var __vue_is_functional_template__ = false;
 /* style inject shadow dom */
 
-var __vue_component__ = normalizeComponent({
+var __vue_component__ = /*#__PURE__*/normalizeComponent({
   render: __vue_render__,
   staticRenderFns: __vue_staticRenderFns__
 }, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, undefined, createInjectorSSR, undefined);function _defineProperty(obj, key, value) {
@@ -269,7 +269,7 @@ function _objectSpread2(target) {
   }
 
   return target;
-}var script$1 = Vue.extend({
+}var script$1 = Vue__default['default'].extend({
   name: 'BootstrapToastMessages',
   props: {
     messages: {
@@ -291,7 +291,7 @@ var __vue_render__$1 = function __vue_render__() {
   return _c('ul', {
     staticClass: "bootstrap-toast-vue-messages"
   }, [_vm._ssrNode(_vm._ssrList(_vm.messages, function (message, k) {
-    return "<li>" + _vm._ssrEscape(_vm._s(message)) + "</li>";
+    return "<li data-v-332efb47>" + _vm._ssrEscape(_vm._s(message)) + "</li>";
   }))]);
 };
 
@@ -318,7 +318,7 @@ var __vue_module_identifier__$1 = "data-v-332efb47";
 var __vue_is_functional_template__$1 = false;
 /* style inject shadow dom */
 
-var __vue_component__$1 = normalizeComponent({
+var __vue_component__$1 = /*#__PURE__*/normalizeComponent({
   render: __vue_render__$1,
   staticRenderFns: __vue_staticRenderFns__$1
 }, __vue_inject_styles__$1, __vue_script__$1, __vue_scope_id__$1, __vue_is_functional_template__$1, __vue_module_identifier__$1, false, undefined, createInjectorSSR, undefined);var open = function open(propsData) {
