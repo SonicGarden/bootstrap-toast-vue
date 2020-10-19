@@ -5,7 +5,7 @@
       <button type="button" class="btn btn-primary" @click="showSuccess">success</button>
       <button type="button" class="btn btn-danger ml-1" @click="showError">error</button>
       <button type="button" class="btn btn-danger ml-1" @click="showErrors">errors</button>
-      <button type="button" class="btn btn-info ml-1" @click="showSolid">solid</button>
+      <button type="button" class="btn btn-info ml-1" @click="showSolid">solid & noAutoHide</button>
     </div>
   </div>
 </template>
