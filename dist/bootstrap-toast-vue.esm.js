@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { BToast, BButton } from 'bootstrap-vue';
 
-var script = Vue.extend({
+var script$1 = Vue.extend({
   name: 'BootstrapToast',
   components: {
     BToast,
@@ -181,10 +181,10 @@ function addStyle(id, css) {
 }
 
 /* script */
-const __vue_script__ = script;
+const __vue_script__$1 = script$1;
 /* template */
 
-var __vue_render__ = function () {
+var __vue_render__$1 = function () {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -219,10 +219,10 @@ var __vue_render__ = function () {
   }, 'Component', _vm.props, false)) : [_vm._v(_vm._s(_vm.content))]], 2);
 };
 
-var __vue_staticRenderFns__ = [];
+var __vue_staticRenderFns__$1 = [];
 /* style */
 
-const __vue_inject_styles__ = function (inject) {
+const __vue_inject_styles__$1 = function (inject) {
   if (!inject) return;
   inject("data-v-493d5cf5_0", {
     source: ".close-button[data-v-493d5cf5]{position:absolute;top:0;right:0}",
@@ -233,23 +233,23 @@ const __vue_inject_styles__ = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__ = "data-v-493d5cf5";
+const __vue_scope_id__$1 = "data-v-493d5cf5";
 /* module identifier */
 
-const __vue_module_identifier__ = undefined;
+const __vue_module_identifier__$1 = undefined;
 /* functional template */
 
-const __vue_is_functional_template__ = false;
+const __vue_is_functional_template__$1 = false;
 /* style inject SSR */
 
 /* style inject shadow dom */
 
-const __vue_component__ = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__,
-  staticRenderFns: __vue_staticRenderFns__
-}, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, createInjector, undefined, undefined);
+const __vue_component__$1 = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$1,
+  staticRenderFns: __vue_staticRenderFns__$1
+}, __vue_inject_styles__$1, __vue_script__$1, __vue_scope_id__$1, __vue_is_functional_template__$1, __vue_module_identifier__$1, false, createInjector, undefined, undefined);
 
-var script$1 = Vue.extend({
+var script = Vue.extend({
   name: 'BootstrapToastMessages',
   props: {
     messages: {
@@ -260,10 +260,10 @@ var script$1 = Vue.extend({
 });
 
 /* script */
-const __vue_script__$1 = script$1;
+const __vue_script__ = script;
 /* template */
 
-var __vue_render__$1 = function () {
+var __vue_render__ = function () {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -282,10 +282,10 @@ var __vue_render__$1 = function () {
   }), 0);
 };
 
-var __vue_staticRenderFns__$1 = [];
+var __vue_staticRenderFns__ = [];
 /* style */
 
-const __vue_inject_styles__$1 = function (inject) {
+const __vue_inject_styles__ = function (inject) {
   if (!inject) return;
   inject("data-v-332efb47_0", {
     source: ".bootstrap-toast-vue-messages[data-v-332efb47]{list-style:disc;padding-left:20px;margin-bottom:0}",
@@ -296,24 +296,24 @@ const __vue_inject_styles__$1 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$1 = "data-v-332efb47";
+const __vue_scope_id__ = "data-v-332efb47";
 /* module identifier */
 
-const __vue_module_identifier__$1 = undefined;
+const __vue_module_identifier__ = undefined;
 /* functional template */
 
-const __vue_is_functional_template__$1 = false;
+const __vue_is_functional_template__ = false;
 /* style inject SSR */
 
 /* style inject shadow dom */
 
-const __vue_component__$1 = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$1,
-  staticRenderFns: __vue_staticRenderFns__$1
-}, __vue_inject_styles__$1, __vue_script__$1, __vue_scope_id__$1, __vue_is_functional_template__$1, __vue_module_identifier__$1, false, createInjector, undefined, undefined);
+const __vue_component__ = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__,
+  staticRenderFns: __vue_staticRenderFns__
+}, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, createInjector, undefined, undefined);
 
 const open = propsData => {
-  new __vue_component__({
+  new __vue_component__$1({
     el: document.createElement("div"),
     propsData
   });
@@ -339,7 +339,7 @@ const showError = (content, propsData = {}) => {
 
 const showErrors = (messages, propsData = {}) => {
   open({
-    component: __vue_component__$1,
+    component: __vue_component__,
     props: {
       messages
     },
@@ -351,5 +351,5 @@ const showErrors = (messages, propsData = {}) => {
 
 // Import vue component
 
-export default __vue_component__;
+export default __vue_component__$1;
 export { open, showError, showErrors, showSuccess };

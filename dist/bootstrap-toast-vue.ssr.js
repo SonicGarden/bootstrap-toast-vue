@@ -1,4 +1,4 @@
-'use strict';Object.defineProperty(exports,'__esModule',{value:true});var Vue=require('vue'),bootstrapVue=require('bootstrap-vue');function _interopDefaultLegacy(e){return e&&typeof e==='object'&&'default'in e?e:{'default':e}}var Vue__default=/*#__PURE__*/_interopDefaultLegacy(Vue);var script = Vue__default['default'].extend({
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});var Vue=require('vue'),bootstrapVue=require('bootstrap-vue');function _interopDefaultLegacy(e){return e&&typeof e==='object'&&'default'in e?e:{'default':e}}var Vue__default=/*#__PURE__*/_interopDefaultLegacy(Vue);var script$1 = Vue__default['default'].extend({
   name: 'BootstrapToast',
   components: {
     BToast: bootstrapVue.BToast,
@@ -134,7 +134,7 @@
     return (id, style) => addStyle(id, style, context);
 }
 function addStyle(id, css, context) {
-    const group =  css.media || 'default' ;
+    const group = css.media || 'default' ;
     const style = context._styles[group] || (context._styles[group] = { ids: [], css: '' });
     if (!style.ids.includes(id)) {
         style.media = css.media;
@@ -158,10 +158,10 @@ function renderStyles(styles) {
     }
     return css;
 }/* script */
-var __vue_script__ = script;
+var __vue_script__$1 = script$1;
 /* template */
 
-var __vue_render__ = function __vue_render__() {
+var __vue_render__$1 = function __vue_render__() {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -196,10 +196,10 @@ var __vue_render__ = function __vue_render__() {
   }, 'Component', _vm.props, false)) : [_vm._v(_vm._s(_vm.content))]], 2);
 };
 
-var __vue_staticRenderFns__ = [];
+var __vue_staticRenderFns__$1 = [];
 /* style */
 
-var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
+var __vue_inject_styles__$1 = function __vue_inject_styles__(inject) {
   if (!inject) return;
   inject("data-v-493d5cf5_0", {
     source: ".close-button[data-v-493d5cf5]{position:absolute;top:0;right:0}",
@@ -210,41 +210,30 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__ = "data-v-493d5cf5";
+var __vue_scope_id__$1 = "data-v-493d5cf5";
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-493d5cf5";
+var __vue_module_identifier__$1 = "data-v-493d5cf5";
 /* functional template */
 
-var __vue_is_functional_template__ = false;
+var __vue_is_functional_template__$1 = false;
 /* style inject shadow dom */
 
-var __vue_component__ = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__,
-  staticRenderFns: __vue_staticRenderFns__
-}, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, undefined, createInjectorSSR, undefined);function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
-function ownKeys(object, enumerableOnly) {
+var __vue_component__$1 = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$1,
+  staticRenderFns: __vue_staticRenderFns__$1
+}, __vue_inject_styles__$1, __vue_script__$1, __vue_scope_id__$1, __vue_is_functional_template__$1, __vue_module_identifier__$1, false, undefined, createInjectorSSR, undefined);function ownKeys(object, enumerableOnly) {
   var keys = Object.keys(object);
 
   if (Object.getOwnPropertySymbols) {
     var symbols = Object.getOwnPropertySymbols(object);
-    if (enumerableOnly) symbols = symbols.filter(function (sym) {
-      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-    });
+
+    if (enumerableOnly) {
+      symbols = symbols.filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+    }
+
     keys.push.apply(keys, symbols);
   }
 
@@ -269,7 +258,22 @@ function _objectSpread2(target) {
   }
 
   return target;
-}var script$1 = Vue__default['default'].extend({
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}var script = Vue__default['default'].extend({
   name: 'BootstrapToastMessages',
   props: {
     messages: {
@@ -278,10 +282,10 @@ function _objectSpread2(target) {
     }
   }
 });/* script */
-var __vue_script__$1 = script$1;
+var __vue_script__ = script;
 /* template */
 
-var __vue_render__$1 = function __vue_render__() {
+var __vue_render__ = function __vue_render__() {
   var _vm = this;
 
   var _h = _vm.$createElement;
@@ -295,10 +299,10 @@ var __vue_render__$1 = function __vue_render__() {
   }))]);
 };
 
-var __vue_staticRenderFns__$1 = [];
+var __vue_staticRenderFns__ = [];
 /* style */
 
-var __vue_inject_styles__$1 = function __vue_inject_styles__(inject) {
+var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
   inject("data-v-332efb47_0", {
     source: ".bootstrap-toast-vue-messages[data-v-332efb47]{list-style:disc;padding-left:20px;margin-bottom:0}",
@@ -309,20 +313,20 @@ var __vue_inject_styles__$1 = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$1 = "data-v-332efb47";
+var __vue_scope_id__ = "data-v-332efb47";
 /* module identifier */
 
-var __vue_module_identifier__$1 = "data-v-332efb47";
+var __vue_module_identifier__ = "data-v-332efb47";
 /* functional template */
 
-var __vue_is_functional_template__$1 = false;
+var __vue_is_functional_template__ = false;
 /* style inject shadow dom */
 
-var __vue_component__$1 = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$1,
-  staticRenderFns: __vue_staticRenderFns__$1
-}, __vue_inject_styles__$1, __vue_script__$1, __vue_scope_id__$1, __vue_is_functional_template__$1, __vue_module_identifier__$1, false, undefined, createInjectorSSR, undefined);var open = function open(propsData) {
-  new __vue_component__({
+var __vue_component__ = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__,
+  staticRenderFns: __vue_staticRenderFns__
+}, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, undefined, createInjectorSSR, undefined);var open = function open(propsData) {
+  new __vue_component__$1({
     el: document.createElement("div"),
     propsData: propsData
   });
@@ -349,7 +353,7 @@ var showError = function showError(content) {
 var showErrors = function showErrors(messages) {
   var propsData = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   open(_objectSpread2({
-    component: __vue_component__$1,
+    component: __vue_component__,
     props: {
       messages: messages
     },
@@ -357,4 +361,4 @@ var showErrors = function showErrors(messages) {
     autoHideDelay: 20000
   }, propsData));
 };// Import vue component
-exports.default=__vue_component__;exports.open=open;exports.showError=showError;exports.showErrors=showErrors;exports.showSuccess=showSuccess;
+exports.default=__vue_component__$1;exports.open=open;exports.showError=showError;exports.showErrors=showErrors;exports.showSuccess=showSuccess;
