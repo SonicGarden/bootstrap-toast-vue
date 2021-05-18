@@ -1,5 +1,5 @@
-import BootstrapToast from "./BootstrapToast.vue";
-import BootstrapToastMessages from "./BootstrapToastMessages.vue";
+import BootstrapToast from './BootstrapToast.vue'
+import BootstrapToastMessages from './BootstrapToastMessages.vue'
 
 type Props = {
   content?: string
@@ -11,39 +11,39 @@ type Props = {
   props?: any
 }
 
-const open = (propsData: Props) => {
-  new BootstrapToast({
-    el: document.createElement("div"),
-    propsData
-  });
-};
+const open = (propsData: Props): InstanceType<typeof BootstrapToast> => {
+  return new BootstrapToast({
+    el: document.createElement('div'),
+    propsData,
+  })
+}
 
 const showSuccess = (content: string, propsData: Props = {}) => {
   open({
     content,
-    variant: "success",
+    variant: 'success',
     autoHideDelay: 5000,
-    ...propsData
-  });
-};
+    ...propsData,
+  })
+}
 
 const showError = (content: string, propsData: Props = {}) => {
   open({
     content,
-    variant: "danger",
+    variant: 'danger',
     autoHideDelay: 20000,
-    ...propsData
-  });
-};
+    ...propsData,
+  })
+}
 
 const showErrors = (messages: string[], propsData: Props = {}) => {
   open({
     component: BootstrapToastMessages,
     props: { messages },
-    variant: "danger",
+    variant: 'danger',
     autoHideDelay: 20000,
-    ...propsData
-  });
-};
+    ...propsData,
+  })
+}
 
-export { open, showSuccess, showError, showErrors };
+export { open, showSuccess, showError, showErrors }
