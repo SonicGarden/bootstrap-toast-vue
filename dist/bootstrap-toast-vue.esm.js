@@ -1,11 +1,11 @@
 import Vue from 'vue';
-import { BToast, BButton } from 'bootstrap-vue';
+import { BToast, BButtonClose } from 'bootstrap-vue';
 
 var script$1 = Vue.extend({
   name: 'BootstrapToast',
   components: {
     BToast,
-    BButton
+    BButtonClose
   },
   props: {
     content: {
@@ -203,18 +203,12 @@ var __vue_render__$1 = function () {
     on: {
       "click": _vm.hide
     }
-  }, [_vm._t("closeButton", [_c('BButton', {
-    staticClass: "close-button text-black-50",
-    attrs: {
-      "size": "sm",
-      "variant": "link"
-    },
+  }, [_vm._t("closeButton", [_c('BButtonClose', {
+    staticClass: "bootstrap-toast__close-button",
     on: {
       "click": _vm.hide
     }
-  }, [_c('i', {
-    staticClass: "fas fa-times"
-  })])]), _vm._v(" "), _vm.component ? _c(_vm.component, _vm._b({
+  })]), _vm._v(" "), _vm.component ? _c(_vm.component, _vm._b({
     tag: "Component"
   }, 'Component', _vm.props, false)) : [_vm._v(_vm._s(_vm.content))]], 2);
 };
@@ -224,8 +218,8 @@ var __vue_staticRenderFns__$1 = [];
 
 const __vue_inject_styles__$1 = function (inject) {
   if (!inject) return;
-  inject("data-v-493d5cf5_0", {
-    source: ".close-button[data-v-493d5cf5]{position:absolute;top:0;right:0}",
+  inject("data-v-8da2c1fe_0", {
+    source: ".bootstrap-toast__close-button[data-v-8da2c1fe]{position:absolute;top:.2rem;right:.5rem;font-size:1.2rem}",
     map: undefined,
     media: undefined
   });
@@ -233,7 +227,7 @@ const __vue_inject_styles__$1 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$1 = "data-v-493d5cf5";
+const __vue_scope_id__$1 = "data-v-8da2c1fe";
 /* module identifier */
 
 const __vue_module_identifier__$1 = undefined;

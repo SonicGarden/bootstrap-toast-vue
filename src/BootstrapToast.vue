@@ -9,14 +9,10 @@
     @click="hide"
   >
     <slot name="closeButton">
-      <BButton
-        class="close-button text-black-50"
-        size="sm"
-        variant="link"
+      <BButtonClose
+        class="bootstrap-toast__close-button"
         @click="hide"
-      >
-        <i class="fas fa-times" />
-      </BButton>
+      ></BButtonClose>
     </slot>
     <Component :is="component" v-if="component" v-bind="props" />
     <template v-else>{{ content }}</template>
@@ -25,11 +21,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { BButton, BToast } from 'bootstrap-vue'
+import { BButtonClose, BToast } from 'bootstrap-vue'
 
 export default Vue.extend({
   name: 'BootstrapToast',
-  components: { BToast, BButton },
+  components: { BToast, BButtonClose },
   props: {
     content: {
       type: String,
@@ -74,9 +70,10 @@ export default Vue.extend({
 </script>
 
 <style lang="css" scoped>
-.close-button {
+.bootstrap-toast__close-button {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 0.2rem;
+  right: 0.5rem;
+  font-size: 1.2rem;
 }
 </style>

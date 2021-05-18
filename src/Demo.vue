@@ -14,25 +14,27 @@
       <button type="button" class="btn btn-info ml-1" @click="showSolid">
         solid & noAutoHide
       </button>
-      <button type="button" class="btn btn-primary" @click="showRepeat(0)">
-        (success & hide) * 3
+      <button type="button" class="btn btn-success ml-1" @click="showCustom">
+        custom
       </button>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import BootstrapToast, { showSuccess, showError, showErrors } from './index'
+import BootstrapToast, {
+  showSuccess,
+  showError,
+  showErrors,
+  open,
+} from './index'
+import DemoToast from './DemoToast.vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import '@fortawesome/fontawesome-free/css/fontawesome.css'
-import '@fortawesome/fontawesome-free/css/solid.css'
 
 export default {
-  components: {
-    BootstrapToast,
-  },
+  components: { BootstrapToast },
   methods: {
     showSuccess() {
       showSuccess('success!')
@@ -46,12 +48,8 @@ export default {
     showSolid() {
       showSuccess('solid!', { solid: true, noAutoHide: true })
     },
-    showRepeat(count = 0) {
-      if (count >= 3) return
-
-      const hide = showSuccess('success!')
-      window.setTimeout(() => hide(), 1000)
-      window.setTimeout(() => this.showRepeat(count + 1), 2000)
+    showCustom() {
+      open({ component: DemoToast })
     },
   },
 }

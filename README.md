@@ -1,11 +1,11 @@
 # bootstrap-toast-vue
 
-[![Image from Gyazo](https://i.gyazo.com/cb9c171434d5c2280448f6fb6fe46e54.gif)](https://gyazo.com/cb9c171434d5c2280448f6fb6fe46e54)
+![Image from Gyazo](https://i.gyazo.com/fbc5d9e2e59c755116df52d5dc6d212d.gif)]
 
 ## Install
 
 ```
-yarn add https://github.com/SonicGarden/bootstrap-toast-vue.git#v0.5.0
+yarn add https://github.com/SonicGarden/bootstrap-toast-vue.git#v0.5.1
 ```
 
 ## Required
