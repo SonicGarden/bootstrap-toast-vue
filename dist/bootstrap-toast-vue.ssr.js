@@ -326,15 +326,18 @@ var __vue_component__ = /*#__PURE__*/normalizeComponent({
   render: __vue_render__,
   staticRenderFns: __vue_staticRenderFns__
 }, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, undefined, createInjectorSSR, undefined);var open = function open(propsData) {
-  return new __vue_component__$1({
+  var component = new __vue_component__$1({
     el: document.createElement('div'),
     propsData: propsData
   });
+  return function () {
+    return component.hide();
+  };
 };
 
 var showSuccess = function showSuccess(content) {
   var propsData = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  open(_objectSpread2({
+  return open(_objectSpread2({
     content: content,
     variant: 'success',
     autoHideDelay: 5000
@@ -343,7 +346,7 @@ var showSuccess = function showSuccess(content) {
 
 var showError = function showError(content) {
   var propsData = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  open(_objectSpread2({
+  return open(_objectSpread2({
     content: content,
     variant: 'danger',
     autoHideDelay: 20000
@@ -352,7 +355,7 @@ var showError = function showError(content) {
 
 var showErrors = function showErrors(messages) {
   var propsData = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  open(_objectSpread2({
+  return open(_objectSpread2({
     component: __vue_component__,
     props: {
       messages: messages

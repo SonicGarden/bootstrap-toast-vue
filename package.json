@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-toast-vue",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "",
   "main": "dist/bootstrap-toast-vue.ssr.js",
   "browser": "dist/bootstrap-toast-vue.esm.js",
@@ -44,7 +44,6 @@
     "rollup-plugin-vue": "^5.1.6",
     "typescript": "^4.0.3",
     "vue": "^2.6.11",
-    "vue-dts-gen": "https://github.com/aki77/vue-dts-gen/releases/download/v0.2.3.vue2/vue-dts-gen-0.1.0.tgz",
     "vue-template-compiler": "^2.6.11"
   },
   "engines": {

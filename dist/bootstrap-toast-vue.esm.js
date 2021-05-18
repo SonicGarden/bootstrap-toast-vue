@@ -313,14 +313,15 @@ const __vue_component__ = /*#__PURE__*/normalizeComponent({
 }, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, createInjector, undefined, undefined);
 
 const open = propsData => {
-  return new __vue_component__$1({
+  const component = new __vue_component__$1({
     el: document.createElement('div'),
     propsData
   });
+  return () => component.hide();
 };
 
 const showSuccess = (content, propsData = {}) => {
-  open({
+  return open({
     content,
     variant: 'success',
     autoHideDelay: 5000,
@@ -329,7 +330,7 @@ const showSuccess = (content, propsData = {}) => {
 };
 
 const showError = (content, propsData = {}) => {
-  open({
+  return open({
     content,
     variant: 'danger',
     autoHideDelay: 20000,
@@ -338,7 +339,7 @@ const showError = (content, propsData = {}) => {
 };
 
 const showErrors = (messages, propsData = {}) => {
-  open({
+  return open({
     component: __vue_component__,
     props: {
       messages

@@ -11,15 +11,19 @@ type Props = {
   props?: any
 }
 
-const open = (propsData: Props): InstanceType<typeof BootstrapToast> => {
-  return new BootstrapToast({
+type HideFunction = () => void
+
+const open = (propsData: Props): HideFunction => {
+  const component = new BootstrapToast({
     el: document.createElement('div'),
     propsData,
   })
+
+  return () => (component as any).hide()
 }
 
-const showSuccess = (content: string, propsData: Props = {}) => {
-  open({
+const showSuccess = (content: string, propsData: Props = {}): HideFunction => {
+  return open({
     content,
     variant: 'success',
     autoHideDelay: 5000,
@@ -27,8 +31,8 @@ const showSuccess = (content: string, propsData: Props = {}) => {
   })
 }
 
-const showError = (content: string, propsData: Props = {}) => {
-  open({
+const showError = (content: string, propsData: Props = {}): HideFunction => {
+  return open({
     content,
     variant: 'danger',
     autoHideDelay: 20000,
@@ -36,8 +40,11 @@ const showError = (content: string, propsData: Props = {}) => {
   })
 }
 
-const showErrors = (messages: string[], propsData: Props = {}) => {
-  open({
+const showErrors = (
+  messages: string[],
+  propsData: Props = {}
+): HideFunction => {
+  return open({
     component: BootstrapToastMessages,
     props: { messages },
     variant: 'danger',
