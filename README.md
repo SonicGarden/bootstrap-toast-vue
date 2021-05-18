@@ -5,7 +5,7 @@
 ## Install
 
 ```
-yarn add https://github.com/SonicGarden/bootstrap-toast-vue.git
+yarn add https://github.com/SonicGarden/bootstrap-toast-vue.git#v0.4.0
 ```
 
 ## Required
@@ -17,11 +17,11 @@ yarn add https://github.com/SonicGarden/bootstrap-toast-vue.git
 ## Usage
 
 ```javascript
-import { showSuccess, showError, showErrors } from "bootstrap-toast-vue";
+import { showSuccess, showError, showErrors } from 'bootstrap-toast-vue'
 
-showSuccess("Success!");
-showError("Error!");
-showErrors(["Error1!", "Error2!"]);
+showSuccess('Success!')
+showError('Error!')
+showErrors(['Error1!', 'Error2!'])
 ```
 
 ### Compiles and hot-reloads for development
