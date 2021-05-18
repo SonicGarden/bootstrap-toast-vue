@@ -2,7 +2,7 @@
   name: 'BootstrapToast',
   components: {
     BToast: bootstrapVue.BToast,
-    BButton: bootstrapVue.BButton
+    BButtonClose: bootstrapVue.BButtonClose
   },
   props: {
     content: {
@@ -180,18 +180,12 @@ var __vue_render__$1 = function __vue_render__() {
     on: {
       "click": _vm.hide
     }
-  }, [_vm._t("closeButton", [_c('BButton', {
-    staticClass: "close-button text-black-50",
-    attrs: {
-      "size": "sm",
-      "variant": "link"
-    },
+  }, [_vm._t("closeButton", [_c('BButtonClose', {
+    staticClass: "bootstrap-toast__close-button",
     on: {
       "click": _vm.hide
     }
-  }, [_c('i', {
-    staticClass: "fas fa-times"
-  })])]), _vm._v(" "), _vm.component ? _c(_vm.component, _vm._b({
+  })]), _vm._v(" "), _vm.component ? _c(_vm.component, _vm._b({
     tag: "Component"
   }, 'Component', _vm.props, false)) : [_vm._v(_vm._s(_vm.content))]], 2);
 };
@@ -201,8 +195,8 @@ var __vue_staticRenderFns__$1 = [];
 
 var __vue_inject_styles__$1 = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-493d5cf5_0", {
-    source: ".close-button[data-v-493d5cf5]{position:absolute;top:0;right:0}",
+  inject("data-v-8da2c1fe_0", {
+    source: ".bootstrap-toast__close-button[data-v-8da2c1fe]{position:absolute;top:.2rem;right:.5rem;font-size:1.2rem}",
     map: undefined,
     media: undefined
   });
@@ -210,10 +204,10 @@ var __vue_inject_styles__$1 = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$1 = "data-v-493d5cf5";
+var __vue_scope_id__$1 = "data-v-8da2c1fe";
 /* module identifier */
 
-var __vue_module_identifier__$1 = "data-v-493d5cf5";
+var __vue_module_identifier__$1 = "data-v-8da2c1fe";
 /* functional template */
 
 var __vue_is_functional_template__$1 = false;
