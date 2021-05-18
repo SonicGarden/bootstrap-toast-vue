@@ -1,4 +1,3 @@
-import BootstrapToast from './BootstrapToast.vue';
 declare type Props = {
     content?: string;
     variant?: string;
@@ -8,8 +7,9 @@ declare type Props = {
     component?: any;
     props?: any;
 };
-declare const open: (propsData: Props) => InstanceType<typeof BootstrapToast>;
-declare const showSuccess: (content: string, propsData?: Props) => void;
-declare const showError: (content: string, propsData?: Props) => void;
-declare const showErrors: (messages: string[], propsData?: Props) => void;
+declare type HideFunction = () => void;
+declare const open: (propsData: Props) => HideFunction;
+declare const showSuccess: (content: string, propsData?: Props) => HideFunction;
+declare const showError: (content: string, propsData?: Props) => HideFunction;
+declare const showErrors: (messages: string[], propsData?: Props) => HideFunction;
 export { open, showSuccess, showError, showErrors };
