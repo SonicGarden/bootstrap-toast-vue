@@ -1,4 +1,4 @@
-'use strict';Object.defineProperty(exports,'__esModule',{value:true});var Vue=require('vue'),bootstrapVue=require('bootstrap-vue');function _interopDefaultLegacy(e){return e&&typeof e==='object'&&'default'in e?e:{'default':e}}var Vue__default=/*#__PURE__*/_interopDefaultLegacy(Vue);var script$1 = Vue__default['default'].extend({
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});var Vue=require('vue'),bootstrapVue=require('bootstrap-vue');function _interopDefaultLegacy(e){return e&&typeof e==='object'&&'default'in e?e:{'default':e}}var Vue__default=/*#__PURE__*/_interopDefaultLegacy(Vue);var script$1 = Vue__default["default"].extend({
   name: 'BootstrapToast',
   components: {
     BToast: bootstrapVue.BToast,
@@ -180,12 +180,14 @@ var __vue_render__$1 = function __vue_render__() {
     on: {
       "click": _vm.hide
     }
-  }, [_vm._t("closeButton", [_c('BButtonClose', {
-    staticClass: "bootstrap-toast__close-button",
-    on: {
-      "click": _vm.hide
-    }
-  })]), _vm._v(" "), _vm.component ? _c(_vm.component, _vm._b({
+  }, [_vm._t("closeButton", function () {
+    return [_c('BButtonClose', {
+      staticClass: "bootstrap-toast__close-button",
+      on: {
+        "click": _vm.hide
+      }
+    })];
+  }), _vm._v(" "), _vm.component ? _c(_vm.component, _vm._b({
     tag: "Component"
   }, 'Component', _vm.props, false)) : [_vm._v(_vm._s(_vm.content))]], 2);
 };
@@ -267,7 +269,7 @@ function _defineProperty(obj, key, value) {
   }
 
   return obj;
-}var script = Vue__default['default'].extend({
+}var script = Vue__default["default"].extend({
   name: 'BootstrapToastMessages',
   props: {
     messages: {
@@ -358,4 +360,4 @@ var showErrors = function showErrors(messages) {
     autoHideDelay: 20000
   }, propsData));
 };// Import vue component
-exports.default=__vue_component__$1;exports.open=open;exports.showError=showError;exports.showErrors=showErrors;exports.showSuccess=showSuccess;
+exports["default"]=__vue_component__$1;exports.open=open;exports.showError=showError;exports.showErrors=showErrors;exports.showSuccess=showSuccess;

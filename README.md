@@ -5,7 +5,7 @@
 ## Install
 
 ```
-yarn add https://github.com/SonicGarden/bootstrap-toast-vue.git#v0.5.1
+yarn add https://github.com/SonicGarden/bootstrap-toast-vue.git#v0.5.2
 ```
 
 ## Required

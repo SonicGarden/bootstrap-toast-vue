@@ -203,12 +203,14 @@ var __vue_render__$1 = function () {
     on: {
       "click": _vm.hide
     }
-  }, [_vm._t("closeButton", [_c('BButtonClose', {
-    staticClass: "bootstrap-toast__close-button",
-    on: {
-      "click": _vm.hide
-    }
-  })]), _vm._v(" "), _vm.component ? _c(_vm.component, _vm._b({
+  }, [_vm._t("closeButton", function () {
+    return [_c('BButtonClose', {
+      staticClass: "bootstrap-toast__close-button",
+      on: {
+        "click": _vm.hide
+      }
+    })];
+  }), _vm._v(" "), _vm.component ? _c(_vm.component, _vm._b({
     tag: "Component"
   }, 'Component', _vm.props, false)) : [_vm._v(_vm._s(_vm.content))]], 2);
 };
@@ -314,7 +316,8 @@ const open = propsData => {
   return () => component.hide();
 };
 
-const showSuccess = (content, propsData = {}) => {
+const showSuccess = function (content) {
+  let propsData = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   return open({
     content,
     variant: 'success',
@@ -323,7 +326,8 @@ const showSuccess = (content, propsData = {}) => {
   });
 };
 
-const showError = (content, propsData = {}) => {
+const showError = function (content) {
+  let propsData = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   return open({
     content,
     variant: 'danger',
@@ -332,7 +336,8 @@ const showError = (content, propsData = {}) => {
   });
 };
 
-const showErrors = (messages, propsData = {}) => {
+const showErrors = function (messages) {
+  let propsData = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   return open({
     component: __vue_component__,
     props: {
@@ -346,5 +351,4 @@ const showErrors = (messages, propsData = {}) => {
 
 // Import vue component
 
-export default __vue_component__$1;
-export { open, showError, showErrors, showSuccess };
+export { __vue_component__$1 as default, open, showError, showErrors, showSuccess };
